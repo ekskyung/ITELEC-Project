@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Return/Refund Request</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f6f8;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .badge {
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 120px;
+    }
+
+    h2 {
+      color: #ee4d2d;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #ee4d2d;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d74227;
+    }
+
+    .output {
+      margin-top: 30px;
+      background-color: #f0f8ff;
+      border: 1px solid #bcd;
+      padding: 20px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .process {
+      margin-top: 20px;
+      padding-left: 15px;
+    }
+
+    .process li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="0aae6293-4384-4689-bb06-d9e0db89ca1f.jpg" alt="Easy Returns Badge" class="badge">
+    <h2>Return / Refund Request Form</h2>
+
+    <form id="refundForm">
+      <label for="orderId">Order ID:</label>
+      <input type="text" id="orderId" required>
+
+      <label for="reason">Reason:</label>
+      <select id="reason" required>
+        <option value="">-- Select --</option>
+        <option value="defective">Item is defective</option>
+        <option value="wrong">Wrong item received</option>
+        <option value="missing">Item not received</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="description">Description:</label>
+      <textarea id="description" rows="4" required></textarea>
+
+      <label for="photo">Upload Supporting Image (optional):</label>
+      <input type="file" id="photo" accept="image/*">
+
+      <button type="submit">Submit Request</button>
+    </form>
+
+    <div class="output" id="outputBox">
+      <h3>Your Refund Request Summary</h3>
+      <p><strong>Order ID:</strong> <span id="outOrderId"></span></p>
+      <p><strong>Reason:</strong> <span id="outReason"></span></p>
+      <p><strong>Description:</strong> <span id="outDescription"></span></p>
+
+      <h4>Refund Process:</h4>
+      <ul class="process">
+        <li>📩 Your request is received and being reviewed</li>
+        <li>🛠 Seller/Support team will inspect the case</li>
+        <li>📦 Return pickup (if needed) will be arranged</li>
+        <li>💰 Refund will be processed to your original payment method within 7–15 business days</li>
+
+        
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("refundForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const orderId = document.getElementById("orderId").value.trim();
+      const reason = document.getElementById("reason").value;
+      const description = document.getElementById("description").value.trim();
+
+      if (!orderId || !reason || !description) {
+        alert("Please complete all fields.");
+        return;
+      }
+
+      // Display the output box
+      document.getElementById("outOrderId").innerText = orderId;
+      document.getElementById("outReason").innerText = reason;
+      document.getElementById("outDescription").innerText = description;
+
+      document.getElementById("refundForm").style.display = "none";
+      document.getElementById("outputBox").style.display = "block";
+
+      
+    });
+  </script>
+</body>
+</html>
