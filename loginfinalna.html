@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lOG IN FORM</title>
+    <link rel="stylesheet" type="text/css" href="slidestyle.css">
+    <link href="https://fonts-googleapis.com/css2?family=Jost:wght@5008display=swap™ rel="stylesheet*>
+    
+</head>
+
+    <style>
+        .xdd{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+             font-size: 1.5em;
+             background-color: #6d44b8;
+             width: 33%;
+             position: absolute;
+             padding: 2px;
+             left: 34%;
+             border-radius: 7px;
+        }
+        .x{
+            width: 33%;
+        }
+    </style>
+
+<body>
+
+    <div class ="main">
+        <input type ="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form>
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" name="txt" placeholder="User name" required="">
+                <input type="email" name="email" placeholder="Email" required="">
+                <input type="Password" name="pswd" placeholder="Password" required="">
+                <button>Sign up</button>
+            </form>
+        </div>
+
+        <div class="login">
+            <form>
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="email" name="email" placeholder="Email" required=""> 
+                <input type="Password" name="pswd" placeholder="Password" required=""> 
+               
+
+            <script>
+                function login(){
+                    const Email = document.getElementById("Email").value;
+                    const Password = document.getElementById("Password").value;
+
+                    const correctEmail = "user@example.com";
+                    const correctPassword ="12345";
+
+                    if (email === correctEmail && Password === correctPassword) {
+                        window.location.href = "returnrefundfinalna.html";
+                        
+                    }else {
+                    }
+                    document.getElementById("message").textContent = "Invalid email or password";
+                    
+                }
+            </script>
+                     <div class="submit">
+                         <a href="returnrefundfinalna.html" class="btn btn-login xdd rounded-pill mb-3">Login</a>
+                         </div>
+                    
+
+                </form>
+                
+                
+                
+
+            </form>
+        </div>
+
+</body>
+</html>
+
